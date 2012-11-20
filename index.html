@@ -70,8 +70,54 @@ $ npm link</pre>
 		</section>
 		<section>
 			<h1>Structure</h1>
-			<p>Again something that can change rapidly, but I will soon link to an example application to document the used structure. Until then,
-			read the source or wait for the link.</p>
+			<p>While the structure is not really battle-tested yet, the following is used in my example application (link will follow soon). Most of it is or should become configurable…</p>
+			<pre>
++-CouchApp/
+  +-Resources/
+    +-Private/
+    | +-CoffeeScript/
+    | | +-Cakefile
+    | | +-app.coffee
+    | +-Compass/
+    | | +-SASS/
+    | | | +-screen.scss
+    | | +-config.rb
+    | +-Lists/
+    | | +-Some Name/
+    | |   +-list.coffee
+    | +-Rewrites/
+    | | +-application.json
+    | | +-tests.json
+    | | +-views.json
+    | +-Views/
+    |   +-Some View/
+    |   | +-map.coffee
+    |   +-Other View/
+    |     +-map.coffee
+    |     +-reduce.coffee
+    +-Public
+      +-HTML
+      | +-index.html
+      | +-tests.html
+      +-Images
+      | +-favicon.ico
+      +-JavaScript
+      | +-app.js
+      +-Styles
+        +-screen.css</pre>
+			<p>and is using the following .coffeecouch file:</p>
+			<pre>
+{
+  "views": "Resources/Private/Views",
+  "remotes": {
+    "dev": "http://localhost:5984/dev"
+  },
+  "id": "_design/myApp",
+  "lists": "Resources/Private/Lists",
+  "revision": "128-9d96bc01c00c20036d8f6ff5449ee799",
+  "attachments": "Resources/Public",
+  "rewrites": "Resources/Private/Rewrites"
+}</pre>
 		</section>
 		<section>
 			<h1>License</h1>
