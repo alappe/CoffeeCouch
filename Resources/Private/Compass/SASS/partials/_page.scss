@@ -1,0 +1,83 @@
+$color-logo-sub: #BD101D;
+$color-background-code: rgba(150, 150, 150, .3);
+$color-text: black;
+$font-mono: DejaVu Sans Mono, mono;
+
+body {
+  font-family: Helvetica-Neue, Helvetica, Arial, sans-serif;
+  background: image-url('paper.jpg') top left repeat;
+
+  header {
+    @include container;
+    margin-top: 1em;
+
+    .logo {
+      @include column(8);
+      background: image-url('CoffeeCouch.png') top left no-repeat;
+      height: 200px;
+    }
+
+    h1 {
+      @include column(16, true);
+      font-size: 80pt;
+      .sub {
+				font-size: 40pt;
+				text-align: right;
+				color: $color-logo-sub;
+      }
+    }
+  }
+
+  .stain {
+    position: absolute;
+    top: 210px;
+    left: 20px;
+    width: 160px;
+    height: 120px;
+    -webkit-blend-mode: screen;
+    opacity: .6;
+    z-index: 10;
+  }
+
+  article {
+    @include container;
+
+    section {
+      h1,h2 {
+				font-weight: 300;
+				font-size: 20pt;
+				margin: 1.5em 0 .5em;
+      }
+			h2 {
+				font-size: 15pt;
+			}
+      p {
+				text-align: justify;
+				line-height: 1.2em;
+      }
+      pre {
+				background-color: $color-background-code;
+				font-family: $font-mono;
+				font-size: 11pt;
+				padding: .5em;
+      }
+      ul {
+				li {
+					margin-left: 1em;
+					list-style-type: square;
+				}
+      }
+      a {
+				font-weight: 100;
+				color: $color-text;
+				text-decoration: none;
+      }
+    }
+  }
+
+  footer {
+    @include container;
+    margin-top: 1em;
+    font-size: 10pt;
+  }
+}

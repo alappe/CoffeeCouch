@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>CoffeeCouch – CouchApp done in CoffeeScript</title>
+	<link href="Resources/Public/Styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31571859-2']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+<body>
+	<img src="Resources/Public/Images/stain.svg" alt="Coffee stain" class="stain" />
+	<article>
+		<a href="https://github.com/alappe/CoffeeCouch"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+		<header>
+			<div class="logo"></div>
+			<h1 class="text">CoffeeCouch <div class="sub">slurp…</div></h1>
+		</header>
+		<section>
+			<h1>Synopsis</h1>
+			<p>Use CoffeeCouch to create, manage and upload <a href="http://guide.couchdb.org/editions/1/en/standalone.html">CouchApps</a> to <a href="http://couchdb.apache.org">CouchDB</a>.</p>
+			<p>The functionality is losely based on both the original <a href="http://couchapp.org/page/couchapp-python">python-based couchapp</a> and the <a href="https://github.com/mikeal/node.couchapp.js">js-based couchapp</a> but rewritten from scratch in <a href="http://coffeescript.org/">CoffeeScript</a> to ease further modifications for those of us using CoffeeScript in their day-to-day life.</p>
+			<p>In the future, using CoffeeCouch will hopefully be like relaxing on a couch while slurping a good coffee…</p>
+		</section>
+		<section>
+			<h1>Warning</h1>
+			<p>This software is in no way done! If you do not like to tinker with code (CoffeeScript) and solve problems, do not use it (yet!).
+			Also have a backup of your CouchApp at any time when using CoffeeCouch to avoid any data-loss!</p>
+			<p>Feel free to add issues on <a href="https://github.com/alappe/CoffeeCouch/issues">github</a> or better: fork the project to provide a pull-request. Thanks!</p>
+		</section>
+		<section>
+			<h1>Installation</h1>
+			<p>For now, use the following steps to install:</p>
+			<pre>$ git clone https://github.com/alappe/CoffeeCouch.git
+$ cd CoffeeCouch
+$ npm install
+$ npm test
+$ npm link</pre>
+		</section>
+		<section>
+			<h1>Usage</h1>
+			<p>CoffeeCouch is new and might change at any time but I'll try to keep this page updated to reflect the current commands.</p>
+			<p>That being said, so far supported are the following commands:</p>
+
+			<h2>remote</h2>
+			<p>Much like in git a remote should point to a specific database and has to have a label (e.g. live, dev, origin).</p>
+			<p>Show all configured remotes:</p>
+			<pre>$ coffeecouch remote show</pre>
+			<p>Add a remote:</p>
+			<pre>$ coffeecouch remote add dev http://127.0.0.1:5984/dev</pre>
+			<p>Remove a remote:</p>
+			<pre>$ coffeecouch remote rm dev</pre>
+
+			<h2>sync</h2>
+			<p>CoffeeCouch can only write to the remote database document if it knows it's current revision id. If you updated a document
+			e.g. in futon the remote and local revision id gets out of sync. To correct this, you use:</p>
+			<pre>$ coffeecouch sync dev</pre>
+
+			<h2>push</h2>
+			<p>To push your app to the remote, you use:</p>
+			<pre>$ coffeecouch push dev</pre>
+		</section>
+		<section>
+			<h1>Structure</h1>
+			<p>Again something that can change rapidly, but I will soon link to an example application to document the used structure. Until then,
+			read the source or wait for the link.</p>
+		</section>
+		<section>
+			<h1>License</h1>
+			<pre>Copyright (c) 2012, Andreas Lappe
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met: 
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer. 
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution. 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+		</section>
+		<section>
+			<h1>Thanks to…</h1>
+			<ul>
+				<li><a href="http://couchdb.apache.org">Apache CouchDB</a> for this great database…</li>
+				<li><a href="http://dragonartz.wordpress.com/">DragonArt</a> for the <a href="http://dragonartz.wordpress.com/2009/09/28/coffee-stains-vector/">stain</a></li>
+				<li><a href="http://dioma.deviantart.com/">Dioma</a> for the <a href="http://dioma.deviantart.com/art/Textures-Paper-58028330">paper texture</a></li>
+				<li><a href="https://github.com/mikeal">Mikeal Rogers</a> for the original <a href="https://github.com/mikeal/node.couchapp.js">node.couchapp.js</a></li>
+				<li>Ben Byford for the <a href="http://thenounproject.com/noun/coffee/#icon-No1210">Coffee from The Noun Project</a></li>
+			</ul>
+		</section>
+	</article>
+	<footer>
+		<p>Copyright (c) 2012, Andreas Lappe &lt;nd (a/t) kaeufli.ch&gt;</p>
+	</footer>
+</body>
+</html>
