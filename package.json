@@ -1,0 +1,32 @@
+{
+  "name": "CoffeeCouch",
+  "version": "0.0.0",
+  "description": "Manage CouchDB Applications",
+  "main": "./src/main.coffee",
+  "bin": {
+    "coffeecouch": "./src/bin.coffee"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -G test/*-test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alappe/CoffeeCouch.git"
+  },
+  "keywords": [
+    "couchapp",
+    "CouchDB"
+  ],
+  "author": "Andreas Lappe <nd@kaeufli.ch>",
+  "license": "BSD",
+  "dependencies": {
+    "coffee-script": "~1.3.3",
+    "request": "~2.10.0",
+    "watch": "~0.5.1",
+    "optimist": "~0.3.4"
+  },
+  "devDependencies": {
+    "mocha": "~1.4.0",
+    "should": "~1.1.0"
+  }
+}

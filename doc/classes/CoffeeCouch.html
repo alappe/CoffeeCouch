@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='..&#47;assets/codo.css' type='text/css'>
+  <script src='..&#47;assets/codo.js'></script>
+  <script src='..&#47;assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='..&#47;'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='..&#47;README.md.html' title='Codo'>Codo</a>
+    &raquo;
+    <a href='..&#47;class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>CoffeeCouch</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='..&#47;class_list.html'>Classes</a>
+      <a id='file_list_link' href='..&#47;file_list.html'>Files</a>
+      <a id='method_list_link' href='..&#47;method_list.html'>Methods</a>
+      <a id='extra_list_link' href='..&#47;extra_list.html'>Extras</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-E</span>
+        Extras list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        CoffeeCouch
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>src&#47;CoffeeCouch.coffee</td>
+        </tr>
+      </table>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+        - (void) <strong>constructor</strong>(options)
+      </a>
+    </span>
+    <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      Initialize CoffeeCouch with the commandline options
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#showRemotes-instance'>
+        - (void) <strong>showRemotes</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Show the saved remotes…
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#addRemote-instance'>
+        - (void) <strong>addRemote</strong>(key, host)
+      </a>
+    </span>
+    <span class='desc'>
+      Add the given remote
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#removeRemote-instance'>
+        - (void) <strong>removeRemote</strong>(key)
+      </a>
+    </span>
+    <span class='desc'>
+      Remove a given remote
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#config-instance'>
+        - (String) <strong>config</strong>(key, value)
+      </a>
+    </span>
+    <span class='desc'>
+      Get or set the configuration for the given key
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#loadViews-instance'>
+        - (void) <strong>loadViews</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Load views
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#loadLists-instance'>
+        - (void) <strong>loadLists</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Load lists
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#loadRewrites-instance'>
+        - (void) <strong>loadRewrites</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Load rewrites Either return the rewrite list or null
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sync-instance'>
+        - (void) <strong>sync</strong>(remote)
+      </a>
+    </span>
+    <span class='desc'>
+      Synchronize the remote revision to the local configuration
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#push-instance'>
+        - (void) <strong>push</strong>(remote)
+      </a>
+    </span>
+    <span class='desc'>
+      Push @doc to the remote indexed by key
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getHost-instance'>
+        - (String) <strong>getHost</strong>(key)
+      </a>
+    </span>
+    <span class='desc'>
+      Return the host saved with the given remote key
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#addAttachments-instance'>
+        - (void) <strong>addAttachments</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Load attachments
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#recursiveListing-instance'>
+        - (Array) <strong>recursiveListing</strong>(root)
+      </a>
+    </span>
+    <span class='desc'>
+      List all files in root recursively.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#addAttachment-instance'>
+        - (void) <strong>addAttachment</strong>(attachment)
+      </a>
+    </span>
+    <span class='desc'>
+      Add an attachment by reading the file in, calculating the md5 hash and put both into @doc.
+    </span>
+  </li>
+</ul>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-instance'>
+      - (void) <strong>constructor</strong>(options)
+    </p>
+    <div class='docstring'>
+  <p>Initialize CoffeeCouch with the commandline options</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>options</span>
+      <span class='type'>
+        (<tt>Object</tt>)
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='showRemotes-instance'>
+      - (void) <strong>showRemotes</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Show the saved remotes…</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='addRemote-instance'>
+      - (void) <strong>addRemote</strong>(key, host)
+    </p>
+    <div class='docstring'>
+  <p>Add the given remote</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>key</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>host</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='removeRemote-instance'>
+      - (void) <strong>removeRemote</strong>(key)
+    </p>
+    <div class='docstring'>
+  <p>Remove a given remote</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>key</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='config-instance'>
+      - (String) <strong>config</strong>(key, value)
+    </p>
+    <div class='docstring'>
+  <p>Get or set the configuration for the given key</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>key</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+    <li>
+      <span class='name'>value</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt>String</tt>)
+      &mdash;
+      <span class='desc'>or undefined</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='loadViews-instance'>
+      - (void) <strong>loadViews</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Load views</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='loadLists-instance'>
+      - (void) <strong>loadLists</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Load lists</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='loadRewrites-instance'>
+      - (void) <strong>loadRewrites</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Load rewrites</p><p>Either return the rewrite list or null</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sync-instance'>
+      - (void) <strong>sync</strong>(remote)
+    </p>
+    <div class='docstring'>
+  <p>Synchronize the remote revision to the local configuration</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>remote</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>(e.g. live, dev)</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='push-instance'>
+      - (void) <strong>push</strong>(remote)
+    </p>
+    <div class='docstring'>
+  <p>Push @doc to the remote indexed by key</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>remote</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getHost-instance'>
+      - (String) <strong>getHost</strong>(key)
+    </p>
+    <div class='docstring'>
+  <p>Return the host saved with the given remote key</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>key</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>String</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='addAttachments-instance'>
+      - (void) <strong>addAttachments</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Load attachments</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='recursiveListing-instance'>
+      - (Array) <strong>recursiveListing</strong>(root)
+    </p>
+    <div class='docstring'>
+  <p>List all files in root recursively.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>root</span>
+      <span class='type'>
+        (<tt>String</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Array</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='addAttachment-instance'>
+      - (void) <strong>addAttachment</strong>(attachment)
+    </p>
+    <div class='docstring'>
+  <p>Add an attachment by reading the file in, calculating the md5 hash
+and put both into @doc.</p>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>attachment</span>
+      <span class='type'>
+        (<tt><a href='../classes/Attachment.html'>Attachment</a></tt>)
+      </span>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Tue Nov 20 2012 17:57:32 GMT+0100 (CET)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v1.5.1
+  (Node.js v0.8.14).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>
