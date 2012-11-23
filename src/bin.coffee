@@ -1,6 +1,5 @@
 #!/usr/bin/env coffee
 
-watch = require 'watch'
 path = require 'path'
 fs = require 'fs'
 
